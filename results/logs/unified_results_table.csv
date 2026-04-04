@@ -1,0 +1,6 @@
+Method,Dataset,Val Acc (%),Test Acc (%),Params (M),Evaluations,Compute Saving
+Random Search,MNIST,99.2,-,-,20,0%
+GA Only,MNIST,99.3,-,-,50,0%
+GA + PSO,MNIST,99.4,-,-,50,0%
+Ours (GA+PSO+Surrogate),MNIST,99.38,99.38,0.24,50,60%+
+Ours (GA+PSO+Surrogate),CIFAR-10,80.1,80.85,2.502,50,60%+

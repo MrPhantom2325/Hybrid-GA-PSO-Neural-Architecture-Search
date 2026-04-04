@@ -1,0 +1,5 @@
+Variant,Components,Best Val Acc,Mean Val Acc,Std,Evaluations,Compute Saving,Notes
+V1: Random Search,None,0.992,0.8891499999999999,0.16723910776689366,20,0%,Baseline
+V2: GA Only,GA,0.993,0.96049,0.10071898425266654,50,0%,Default HP
+V3: GA + PSO,GA + PSO,0.9939929999999999,0.9939929999999999,0.0,50,0%,PSO-tuned HP
+V4: Full System (Ours),GA + PSO + Surrogate + Pareto,0.9938333333333333,0.9938333333333333,0.0,50,60%+,20-epoch full train
