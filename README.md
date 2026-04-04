@@ -152,23 +152,6 @@ Hybrid-GA-PSO-Neural-Architecture-Search/
 
 ---
 
-## Quickstart
-
-### Option 1 — Google Colab (Recommended)
-
-Click the badge at the top of this README. No installation needed — runs on free T4 GPU.
-
-Run notebooks in order: Phase1 → Phase2 → Phase3 → Phase4 → Phase5 → Phase6 → Phase7.
-
-### Option 2 — Local Setup
-
-```bash
-git clone https://github.com/yourusername/nas-ga-pso.git
-cd nas-ga-pso
-pip install -r requirements.txt
-jupyter notebook Phase1_NAS_Setup.ipynb
-```
-
 ### Requirements
 
 ```
@@ -186,7 +169,7 @@ jupyter>=1.0.0
 
 ## Phase-by-Phase Guide
 
-| Phase | Notebook | What it does | Runtime |
+| Phase | Phase | What it does | Runtime |
 |-------|----------|-------------|---------|
 | 1 | `Phase1_NAS_Setup` | Installs dependencies, verifies GPU | 2 min |
 | 2 | `Phase2_Chromosome_Encoding` | Defines 12-gene chromosome, `decode_chromosome()` | 5 min |
