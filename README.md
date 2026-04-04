@@ -2,7 +2,6 @@
 
 > Automated neural architecture search using Genetic Algorithms, Particle Swarm Optimization, surrogate-assisted evaluation, and multi-objective Pareto optimization — runnable on a free Google Colab T4 GPU.
 
-[![Open In Colab](https://colab.research.google.com/assets/colab-badge.svg)](https://colab.research.google.com/github/yourusername/nas-ga-pso/blob/main/Phase1_NAS_Setup.ipynb)
 ![Python](https://img.shields.io/badge/Python-3.10-blue)
 ![PyTorch](https://img.shields.io/badge/PyTorch-2.1.0-orange)
 ![License](https://img.shields.io/badge/License-MIT-green)
