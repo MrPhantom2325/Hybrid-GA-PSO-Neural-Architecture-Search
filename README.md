@@ -69,32 +69,85 @@ Random Population
 
 ## Repository Structure
 
-```
-nas-ga-pso/
+```text
+Hybrid-GA-PSO-Neural-Architecture-Search/
+├── config/                     # Global configuration (paths, hyperparameters, experiment settings)
+│   ├── __init__.py
+│   └── config.py
 │
-├── Phase1_NAS_Setup.ipynb          # Environment setup & dependency install
-├── Phase2_Chromosome_Encoding.ipynb # Architecture encoding & decode_chromosome()
-├── Phase3_Genetic_Algorithm.ipynb  # GA search loop (MNIST & CIFAR-10)
-├── Phase4_PSO_Optimizer.ipynb      # PSO hyperparameter tuning from scratch
-├── Phase5_Surrogate_Model.ipynb    # Random Forest surrogate + active learning
-├── Phase6_Pareto_Analysis.ipynb    # NSGA-II multi-objective evaluation
-├── Phase7_Experiments.ipynb        # Ablation studies & convergence analysis
+├── data/                       # Datasets and dataset loaders
+│   ├── MNIST/                  # MNIST data (or link/instructions)
+│   └── cifar-10-batches-py/    # CIFAR‑10 data (or link/instructions)
 │
-├── results/
-│   ├── ga_results.csv              # All GA-evaluated architectures
-│   ├── ga_history.json             # Generation-by-generation convergence
-│   ├── pareto_front.csv            # 14 Pareto-optimal architectures (MNIST)
-│   ├── ablation_table.csv          # Ablation study results
-│   ├── pso_results.json            # PSO convergence and best hyperparameters
-│   ├── phase5_results.json         # Surrogate active learning results
-│   ├── cifar10_ga_results.json     # CIFAR-10 GA search history
-│   ├── cifar10_final.json          # CIFAR-10 final trained architecture
-│   ├── final_results.json          # Best MNIST architecture full training
-│   ├── best_config.json            # Best PSO-tuned hyperparameters
-│   └── plots/                      # All figures (convergence, Pareto, ablation)
+├── evaluation/                 # Multi‑objective evaluation and Pareto utilities
+│   ├── __init__.py
+│   ├── multi_objective.py      # Objective definitions (accuracy, params, FLOPs, etc.)
+│   └── pareto.py               # Pareto‑front construction and dominance checks
 │
-├── requirements.txt
-└── README.md
+├── ga/                         # Genetic Algorithm components
+│   ├── __init__.py
+│   ├── genetic_algorithm.py    # GA loop (selection, crossover, mutation, replacement)
+│   ├── operators.py            # Crossover/mutation operators
+│   └── population.py           # Population representation and utilities
+│
+├── pso/                        # Particle Swarm Optimization components
+│   ├── __init__.py
+│   ├── pso_fitness.py          # PSO fitness evaluation
+│   └── pso_optimizer.py        # PSO update rules and main loop
+│
+├── search_space/               # NAS search‑space definition
+│   ├── __init__.py
+│   ├── architecture_validator.py  # Validity checks for sampled architectures
+│   ├── chromosome.py              # Chromosome / architecture encoding
+│   └── search_space_utils.py      # Helper utilities for search‑space operations
+│
+├── surrogate/                  # Surrogate model and active learning
+│   ├── __init__.py
+│   ├── active_learning.py      # Active‑learning loop for querying new architectures
+│   └── surrogate_model.py      # Surrogate model definition and training
+│
+├── training/                   # Proxy / final training pipeline
+│   ├── __init__.py
+│   └── proxy_trainer.py        # Training of candidate architectures with proxy budget
+│
+├── utils/                      # General utilities and helpers
+│   └── __init__.py             # (Extend with logging, seeding, CLI helpers, etc.)
+│
+├── results/                    # Logs, metrics, and generated plots
+│   ├── logs/                   # CSV/JSON logs from experiments
+│   │   ├── ablation_table.csv
+│   │   ├── best_config.json
+│   │   ├── best_config_phase5.json
+│   │   ├── cifar10_final.json
+│   │   ├── cifar10_ga_results.json
+│   │   ├── final_results.json
+│   │   ├── ga_history.json
+│   │   ├── ga_results.csv
+│   │   ├── pareto_front.csv
+│   │   ├── phase5_results.json
+│   │   ├── pso_results.json
+│   │   ├── random_search_results.json
+│   │   └── unified_results_table.csv
+│   │
+│   └── plots/                  # Figures used in the paper/report
+│       ├── ablation_study.png
+│       ├── active_learning_results.png
+│       ├── chromosome_schema.png
+│       ├── convergence_analysis.png
+│       ├── dataset_distribution.png
+│       ├── dataset_samples.png
+│       ├── final_comparison.png
+│       ├── final_training_curve.png
+│       ├── ga_convergence.png
+│       ├── pareto_front.png
+│       ├── pso_comparison.png
+│       ├── pso_convergence.png
+│       ├── search_space_distribution.png
+│       ├── surrogate_final_quality.png
+│       └── surrogate_seed_quality.png
+│
+├── README.md                   # Project description and usage
+└── .gitignore                  # Git ignore rules
 ```
 
 ---
