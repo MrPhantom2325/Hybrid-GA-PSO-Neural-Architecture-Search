@@ -286,10 +286,10 @@ Full 14-architecture Pareto front available in `results/pareto_front.csv`.
 If you use this code or build on this work, please cite:
 
 ```bibtex
-@inproceedings{yourname2026hybrid,
+@inproceedings{Shriyans2026hybrid,
   title     = {Hybrid Multi-Objective GA--PSO Neural Architecture Search
                with Surrogate Fitness Prediction},
-  author    = {Your Name},
+  author    = {Shriyans Nayak},
   booktitle = {Proceedings of the International Joint Conference on
                Neural Networks (IJCNN)},
   year      = {2026}
